@@ -1,5 +1,5 @@
 function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
-%Dummy comment: 342452345
+%Dummy comment: dummy comment
 %**************************************************************************
 %
 % Функция GEOLOCATION_LEO_DOPPLER_N_POST_2023 моделирует алгоритм определения 
