@@ -1,4 +1,5 @@
    function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
+   
 %**************************************************************************
 %
 % ‘ункци€ GEOLOCATION_LEO_DOPPLER_N_POST_2023 моделирует алгоритм определени€ 
@@ -388,7 +389,7 @@ timeEst{1}=utc0_KA1; % эпоха TLE
 
 DT_=abs(30*1); % сек
 DT_ALL=abs(1*min_per_day/1); % мин
-dXYZ=UnitDist*[1 1 1]; % метры 
+dXYZ=UnitDist*[1 1 -1]; % метры 
 
 freqDownLink=7*OneGHz; % √ц
 RMS_DOPPLER=1; % √ц
