@@ -1,4 +1,6 @@
-function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
+function [ret] = loshadka (prm)
+ret=prm;
+%function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
 %342452345
 %**************************************************************************
 %
