@@ -1,4 +1,6 @@
-   function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
+function [loshadka] =prm(param)
+loshadka = GEOLOCATION_LEO_DOPPLER_N_POST_2023
+function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
    
 %**************************************************************************
 %
@@ -951,3 +953,4 @@ disp(' ')
 
 
 end % GEOLOCATION_LEO_DOPPLER_N_POST
+end
