@@ -173,8 +173,8 @@ if Geoid
 end
  
 %% Выбор числа постов
- 
-NumPosts= 3; % число постов                          
+ NumPosts=prm.NumPosts;
+%NumPosts= 3; % число постов                          
 
 
  %% Формирование области постов (OP) вокруг центра
@@ -194,8 +194,9 @@ NumPosts= 3; % число постов
 
 if NumPosts > 1
     
-    distOP=350*UnitDist; % растояние от центра Постов, м
-    
+    %distOP=350*UnitDist; % растояние от центра Постов, м
+    distOP=prm.distOP;
+    disp (distOP)
     
  end    
     
@@ -291,7 +292,7 @@ hIRIsee=0; % высота над уровнем моря
 
     % проверка растояния ПОСТ-ИРИ через геодезические координаты: 
     d = vdist(latIRI,lonIRI,latOP_0,lonOP_0);
-    disp(['растояние центр Постов-ИРИ recon = ' num2str(d/UnitDist) ' км'])
+    %disp(['растояние центр Постов-ИРИ recon = ' num2str(d/UnitDist) ' км'])
     disp(' ')
        
      
@@ -787,8 +788,9 @@ if OKS
    pos_err_OKS=mean(b);
    vel_err_OKS=mean(q);
 
-   disp(['среднее значение ошибки ОКS = ' num2str(pos_err_OKS/UnitDist)  ' км ' ])
-   disp(' ')
+   %disp(['среднее значение ошибки ОКS = ' num2str(pos_err_OKS/UnitDist)  ' км ' ])
+   ret.SrZnachOKS=pos_err_OKS/UnitDist;
+   %disp(' ')
  
 end
 
@@ -836,7 +838,7 @@ if DDM_OMP
 
      if ~ exitflag
           MinFlagStr='ОМП ИРИ методом ДДМ: min квадратичного функционала невязки не найден !!!';
-          disp(MinFlagStr)
+          %disp(MinFlagStr)
      end
 
     latIRI_DDM(v)=opt(1); % оценка широты ИРИ
@@ -865,8 +867,8 @@ if ~ isempty(Vitok{1})
 end
 
 meanErr=nanmean(err_DDM);
-disp(['среднее значение ОМП ИРИ методом ДДМ, км,  = ' num2str(meanErr/UnitDist)])
-disp(' ')
+%disp(['среднее значение ОМП ИРИ методом ДДМ, км,  = ' num2str(meanErr/UnitDist)])
+%disp(' ')
 
 end % if DDM_OMP
 
@@ -913,7 +915,7 @@ end % if DDM_OMP
 
      if ~ exitflag
           MinFlagStr='СОМП по Доплеру: min квадратичного функционала невязки не найден !!!';
-          disp(MinFlagStr)
+         % disp(MinFlagStr)
      end
 
     latPost_Doppler(v)=opt(1); % оценка широты Поста
@@ -942,8 +944,8 @@ if ~ isempty(Vitok{1})
 end
 
 meanErr_Doppler=nanmean(errPost_Doppler);
-disp(['среднее значение ошибки СОМП Поста по Доплеру = ' num2str(meanErr_Doppler/UnitDist)  ' км ' ])
-disp(' ')
+%disp(['среднее значение ошибки СОМП Поста по Доплеру = ' num2str(meanErr_Doppler/UnitDist)  ' км ' ])
+%disp(' ')
 
 
     
