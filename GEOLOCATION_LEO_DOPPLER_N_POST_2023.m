@@ -1,4 +1,4 @@
-function [loshadka] =prm(param)
+function [loshadka] =prm(params)
 loshadka = GEOLOCATION_LEO_DOPPLER_N_POST_2023
 function []=GEOLOCATION_LEO_DOPPLER_N_POST_2023(varargin)
    

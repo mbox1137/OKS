@@ -16,3 +16,4 @@ params.freqDownLink=7*10^9
 params.RMS_DOPPLER=1
 params.OKSType=0
 params.min_elev_deg=10
+results=loshadka(params)
