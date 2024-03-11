@@ -195,8 +195,8 @@ end
 if NumPosts > 1
     
     %distOP=350*UnitDist; % растояние от центра Постов, м
-    distOP=prm.distOP;
-    disp (distOP)
+    distOP=prm.distOP*UnitDist;
+    
     
  end    
     
@@ -285,7 +285,7 @@ hIRIsee=0; % высота над уровнем моря
     
 
     % Выбор расстония до Поста
-    distOA=350*UnitDist; % растояние области анализа (OA) от Поста, м
+    distOA=1000*UnitDist*UnitDist; % растояние области анализа (OA) от Поста, м
    
 
     [latIRI, lonIRI]=vreckon(latOP_0,lonOP_0,distOA,az);
@@ -391,10 +391,13 @@ timeEst{1}=utc0_KA1; % эпоха TLE
 
 DT_=abs(30*1); % сек
 DT_ALL=abs(1*min_per_day/1); % мин
-dXYZ=UnitDist*[1 1 1]; % метры 
-
+%dXYZ=prm.dXYZ*UnitDist; % метры 
+dXYZ=UnitDist*[ prm.dX prm.dY prm.dZ ];
+% dX = prm.dX;
+% dY = prm.dY;
+% dZ = prm.dZ;
 freqDownLink=7*OneGHz; % Гц
-RMS_DOPPLER=1; % Гц
+RMS_DOPPLER=prm.RMS_DOPPLER; % Гц
 OKSType=0;
 min_elev_deg=10;
 
